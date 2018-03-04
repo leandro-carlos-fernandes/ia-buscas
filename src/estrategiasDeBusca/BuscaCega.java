@@ -1,6 +1,7 @@
 package estrategiasDeBusca;
 
-import java.util.Stack;
+import java.util.ArrayList;
+import java.util.List;
 
 import espacoDeEstados.Estado;
 
@@ -19,7 +20,7 @@ public abstract class BuscaCega {
 	protected String nomeDaEstrategia;	// nome da estratégia de busca utilizada
 	protected Estado<?> eInicial;		// representa o estado inicial da busca
 	protected Estado<?> eObjetivo;		// representa um estado do problema que contenha os objetivos ou seja, em si mesmo, a meta para a busca.
-	protected Stack<Estado<?>> caminho; // contém o caminho da solução desde a raiz (inicio) 
+	protected List<Estado<?>> caminho; // contém o caminho da solução desde a raiz (inicio) 
 	
 	/**
 	 * Construtor padrão.
@@ -32,7 +33,7 @@ public abstract class BuscaCega {
 		this.nomeDaEstrategia = "Busca cega";
 		eInicial = estadoInicial;
 		eObjetivo = estadoMeta;
-		caminho = new Stack<Estado<?>>();
+		caminho = new ArrayList<Estado<?>>();
 	}
 
 	/**
@@ -77,5 +78,12 @@ public abstract class BuscaCega {
 	 */
 	public abstract void buscar();
 	
+	/**
+	 * Recupera o caminho correspondente a solução encontrada pela busca.
+	 * @return
+	 */
+	public List<Estado<?>> getCaminhoSolucao() {
+		return caminho;
+	}
+	
 }
-

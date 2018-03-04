@@ -20,7 +20,7 @@ public abstract class Estado<T> {
 	
 	private int id = 0;					// identificador do estado
 	private int nivel;					// nível em que o estado se encontra na árvore de busca
-	private Estado<?> ancestral;		// referencia ao nó pai na árvore de busca
+	private Estado<?> ancestral = null;	// referencia o nó pai na árvore de busca
 	
 	/**
 	 * Define o número identificador do estado.
