@@ -26,8 +26,8 @@ public abstract class Estado<T> {
 	 * Define o número identificador do estado.
 	 * @param identificador do estado
 	 */
-	public int setId(int id) {
-		return this.id = id;
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	/**
