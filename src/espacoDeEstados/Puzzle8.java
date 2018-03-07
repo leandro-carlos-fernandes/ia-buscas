@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class Puzzle8 extends Estado<char[]> {
 	
-	private static int contGlobal = 0;	// contador global de instâncias usado para geração de ID's
+	private static int contGlobal = 0;	// contador global de instâncias
 	private char[] tabuleiro;			// vetor que descreve a posição das peças do quebra-cabeças
 	
 	/**
@@ -53,7 +53,7 @@ public class Puzzle8 extends Estado<char[]> {
 	 */
 	public Puzzle8(char[] cfgTabuleiro, Puzzle8 ancestral, int nivel) {
 		super();
-		setId(contGlobal++);
+		setId( contGlobal++ );
 		setNivel(nivel);
 		setAncestral(ancestral);
 		tabuleiro = cfgTabuleiro.clone();
@@ -117,115 +117,115 @@ public class Puzzle8 extends Estado<char[]> {
 			cfgNova = getEstado();
 			cfgNova[0] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[0] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 1:
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[0];
 			cfgNova[0] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[2];
 			cfgNova[2] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 2:
 			cfgNova = getEstado();
 			cfgNova[2] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[2] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 3:
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[0];
 			cfgNova[0] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[6];
 			cfgNova[6] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 4:
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 5:
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[2];
 			cfgNova[2] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[8];
 			cfgNova[8] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 6:
 			cfgNova = getEstado();
 			cfgNova[6] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[6] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 7:
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[8];
 			cfgNova[8] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[6];
 			cfgNova[6] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		case 8:
 			cfgNova = getEstado();
 			cfgNova[8] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			cfgNova = getEstado();
 			cfgNova[8] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add(new Puzzle8(cfgNova, this, getNivel()+1));
+			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
 			break;
 		}
 		
