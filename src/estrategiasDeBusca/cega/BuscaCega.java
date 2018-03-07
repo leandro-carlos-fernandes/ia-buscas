@@ -1,4 +1,4 @@
-package estrategiasDeBusca;
+package estrategiasDeBusca.cega;
 
 import java.util.ArrayList;
 import java.util.List;
