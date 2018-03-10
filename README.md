@@ -32,39 +32,39 @@ Guiam-se por uma exploração sistemática do espaço de estados, segundo uma determ
 
 Métodos deste grupo:
  
-    - *Busca em Largura*:
+1. *Busca em Largura*:
 
-    Constroem a árvore de busca expandindo nível-a-nível, de modo que o aprofundamento aconteça após todas as possibilidades do nível anterior tenham sido analisadas.
+Constroem a árvore de busca expandindo nível-a-nível, de modo que o aprofundamento aconteça após todas as possibilidades do nível anterior tenham sido analisadas.
  
-    - *Busca em Profundidade*:
+2. *Busca em Profundidade*:
  
-    Cria a árvore de busca se aprofundando na seqüência de estados sucessivos, incrementando o nível da árvore a cada passo e enquanto houver sucessores para o estado corrente. Os demais estados de um mesmo nível somente serão explorados após o ramo do anterior ter sido completamente finalizado.
+Cria a árvore de busca se aprofundando na seqüência de estados sucessivos, incrementando o nível da árvore a cada passo e enquanto houver sucessores para o estado corrente. Os demais estados de um mesmo nível somente serão explorados após o ramo do anterior ter sido completamente finalizado.
  
-    Note que esta abordagem é suscetível a problemas frente processos cíclicos no espaço de estados e quando não há detecção de estados repetidos, podendo incorrer num aprofundamento infinito de um ramo e, por conseqüência, não sendo capaz de explorar outras áreas do espaço de estado.
+Note que esta abordagem é suscetível a problemas frente processos cíclicos no espaço de estados e quando não há detecção de estados repetidos, podendo incorrer num aprofundamento infinito de um ramo e, por conseqüência, não sendo capaz de explorar outras áreas do espaço de estado.
  
-    - *Busca em Profundidade Limitada*:
+3. *Busca em Profundidade Limitada*:
 
-    Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
+Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
 
 
 - **Busca Informada ou Busca Heurística**
 
 Os algoritmos desta categoria empregam estratégias que procuram prover maior eficiência funcional e de memória em relação as abordagens clássicas. Além da descrição do problema, fazem uso de funções de custo e de avaliação  para orientar a escolha do próximo estado a ser explorado durante o processo de busca.
 
-    - *Hill-Climbing (Subida da Encosta ou Otimização Discreta)*:
+1. *Hill-Climbing (Subida da Encosta ou Otimização Discreta)*:
     
-    A estratégia deste algoritmo consiste em realizar uma busca em profundidade em conjunto com a função de avaliação (heurística), de modo a selecionar dentre os nodos descendentes do ramo atual aquele que for mais promissor. 
+A estratégia deste algoritmo consiste em realizar uma busca em profundidade em conjunto com a função de avaliação (heurística), de modo a selecionar dentre os nodos descendentes do ramo atual aquele que for mais promissor. 
  
-    - *Best-First Search - BFS (Melhor primeiro)*:
+2. *Best-First Search - BFS (Melhor primeiro)*:
     
-    O algoritmo BFS explora o espaço de estados realizando uma busca em largura, porém diferenciando-se por utilizar a função de avaliação para determinar a ordem de visitação dos nodos localizados no mesmo nível.
+O algoritmo BFS explora o espaço de estados realizando uma busca em largura, porém diferenciando-se por utilizar a função de avaliação para determinar a ordem de visitação dos nodos localizados no mesmo nível.
  
-    - *Branch-and-Bound*:
+3. *Branch-and-Bound*:
     
-    Também utiliza uma estratégia exploratória em largura, entretanto considera a função de custo como o elemento de seleção para determinar qual o nodo, dentre aqueles do mesmo nível, será o próximo a ser visitado.
+Também utiliza uma estratégia exploratória em largura, entretanto considera a função de custo como o elemento de seleção para determinar qual o nodo, dentre aqueles do mesmo nível, será o próximo a ser visitado.
     
-    - [A\* (A-Star ou Busca Ótima)](https://en.wikipedia.org/wiki/A*_search_algorithm):
+4. *A\* (A-Star ou Busca Ótima)*:
     
-    - *Iterative Deepening A-Star - IDA\**:
+5. *Iterative Deepening A-Star - IDA\**:
     
-    - *Recursive Best-First Search - RBFS*:
+6. *Recursive Best-First Search - RBFS*:
