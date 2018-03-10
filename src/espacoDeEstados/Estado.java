@@ -22,6 +22,9 @@ public abstract class Estado<T> {
 	private int nivel;					// nível em que o estado se encontra na árvore de busca
 	private Estado<?> ancestral = null;	// referencia o nó pai na árvore de busca
 	
+	protected int avaliacao = 0;		// valor de avaliação do estado em relação a um objetivo
+	protected int custo = 0;			// esforço despendido para alcançar o estado
+		
 	/**
 	 * Define o número identificador do estado.
 	 * @param identificador do estado
@@ -70,8 +73,41 @@ public abstract class Estado<T> {
 	 */
 	public Estado<?> getAncestral() {
 		return ancestral;
+	}	
+	
+	/**
+	 * Define um valor que expresse a avaliação deste estado.
+	 * @param avaliacao
+	 */
+	public void setAvaliacao(int avaliacao) {
+		this.avaliacao = avaliacao;
+	}
+
+	/**
+	 * Retorna a avaliação do estado, uma quantificação para sua condição.
+	 * @return valor de avaliação do estado.
+	 */
+	public int getAvaliacao() {
+		return avaliacao;
+	}
+
+	/**
+	 * Define um valor que represente o custo acumulado para se alcançar este
+	 * estado dentro do espaço.
+	 * @param custo valor acumulado do esforço realizado.
+	 */
+	public void setCusto(int custo) {
+		this.custo = custo;
 	}
 	
+	/**
+	 * Recupera o custo despendido para se alcançar este estado dentro do espaço.
+	 * @return valor acumulado do esforço realizado.
+	 */
+	public int getCusto() {
+		return custo;
+	}
+
 	/**
 	 * Status, descrição ou configuração representativa para o estado.
 	 * @param informações que caracterizam este estado 
@@ -89,7 +125,7 @@ public abstract class Estado<T> {
 	 * @return lista de estados sucessores (adjacentes) a partir deste estado
 	 */
 	public abstract List<?> getSucessores();
-	
+
 	/**
 	 * Permite verificar se este estado é igual a outro.
 	 * @param o estado qual se deseja comparar com este
@@ -103,4 +139,5 @@ public abstract class Estado<T> {
 	 * @return uma String representativa contendo as informações descritivas do estado
 	 */
 	public abstract String toString();
+	
 }

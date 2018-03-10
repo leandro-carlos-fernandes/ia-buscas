@@ -23,9 +23,11 @@ import java.util.List;
  */
 public class Puzzle8 extends Estado<char[]> {
 	
+	public static final char[] TABULEIRO_ORGANIZADO = {'1','2','3','4','5','6','7','8',' '};
+	
 	private static int contGlobal = 0;	// contador global de instâncias
 	private char[] tabuleiro;			// vetor que descreve a posição das peças do quebra-cabeças
-	
+		
 	/**
 	 * Construtor padrão. Cria uma instância que representa uma configuração
 	 * qualquer para o tabuleiro do quebra-cabeças
@@ -105,8 +107,9 @@ public class Puzzle8 extends Estado<char[]> {
 	 */
 	@Override
 	public List<Puzzle8> getSucessores() {
-		List<Puzzle8> estadosSucessores = new ArrayList<Puzzle8>();
 		char[] cfgNova;
+		Puzzle8 estado;
+		List<Puzzle8> estadosSucessores = new ArrayList<Puzzle8>();
 		
 		int posLivre = 0;
 		while (tabuleiro[posLivre] != ' ')
@@ -117,121 +120,198 @@ public class Puzzle8 extends Estado<char[]> {
 			cfgNova = getEstado();
 			cfgNova[0] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[0] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 1:
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[0];
 			cfgNova[0] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[2];
 			cfgNova[2] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 2:
 			cfgNova = getEstado();
 			cfgNova[2] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[2] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 3:
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[0];
 			cfgNova[0] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estadosSucessores.add(estado);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estadosSucessores.add(estado);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[6];
 			cfgNova[6] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 4:
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[1];
 			cfgNova[1] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 5:
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[2];
 			cfgNova[2] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[8];
 			cfgNova[8] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 6:
 			cfgNova = getEstado();
 			cfgNova[6] = cfgNova[3];
 			cfgNova[3] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[6] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 7:
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[4];
 			cfgNova[4] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[8];
 			cfgNova[8] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[6];
 			cfgNova[6] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		case 8:
 			cfgNova = getEstado();
 			cfgNova[8] = cfgNova[5];
 			cfgNova[5] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[8] = cfgNova[7];
 			cfgNova[7] = ' ';
-			estadosSucessores.add( new Puzzle8(cfgNova, this, getNivel()+1) );
+			estado = new Puzzle8(cfgNova, this, getNivel()+1);
+			estado.setCusto(this.getCusto() + 1);
+			estado.setAvaliacao( heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estadosSucessores.add(estado);
 			break;
 		}
 		
 		return estadosSucessores;
 	}
 	
+	private int heuristica(char[] tabuleiroOrganizado) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+		
 	/**
 	 * Retorna uma String correspondente a configuração das peças no tabuleiro. 
 	 */

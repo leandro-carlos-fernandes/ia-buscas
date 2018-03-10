@@ -1,8 +1,8 @@
-# Espaço de Estados e formas de Buscas
+# Espaço de Estados e Estratégias de Busca
 
-Este projeto é um exemplo de implementação em Java dos métodos de busca cega mais comuns da área de Inteligência Artificial, que permitem resolver problemas diversos desde que modelados na forma de um Espaços de Estados.
+Este projeto é um exemplo de implementação em Java dos métodos de busca mais comuns da área de Inteligência Artificial, que permitem resolver problemas dos mais diversos tipos desde que modelados na forma de um Espaços de Estados.
 
-A solução do problema é dada através exploração do espaço, transitando entre diferentes estados possíveis até que seja alcançado um estado que atenda os objetivos estabelecidos para a busca (estado meta).
+A solução de um problema é encontrada através da exploração do espaço que o representa, transitando entre os diferentes estados possíveis até que seja alcançado um estado que atenda os objetivos estabelecidos para a busca (estado meta).
 
 
 ## Problemas modelados:
@@ -22,3 +22,33 @@ As peças não podem ser retiradas do tabuleiro, tampouco podem ser movimentadas d
 Consiste num jogo em que um quadriculado com nove posições, organizadas em três linhas e três colunas, é preenchido e no qual dois jogadores se confrontam fazendo suas jogadas alternadamente. Cada um deles faz a sua jogada marcando uma posição vazia com o seu símbolo.
 
 Jogada após jogada o tabuleiro vai sendo preenchido com os símbolos `X` e `O`. O ganhador da disputa será aquele que conseguir formar primeiro uma trinca de suas marcas numa disposição linear.
+
+
+## Estratégias de Busca
+
+- **Busca Cega**
+
+Guiam-se por uma exploração sistemática do espaço de estados, segundo uma determinada estratégia e utilizam apenas a descrição do problema para conduzir o processo.
+
+Métodos deste grupo:
+ 
+ - Busca em Largura
+ Constroem a árvore de busca expandindo nível-a-nível, de modo que o aprofundamento aconteça após todas as possibilidades do nível anterior tenham sido analisadas.
+ 
+ - Busca em Profundidade
+ Cria a árvore de busca se aprofundando na seqüência de estados sucessivos, incrementando o nível da árvore a cada passo e enquanto houver sucessores para o estado corrente. Os demais estados de um mesmo nível somente serão explorados após o ramo do anterior ter sido completamente finalizado.
+ 
+ Note que esta abordagem é suscetível a problemas frente processos cíclicos no espaço de estados e quando não há detecção de estados repetidos, podendo incorrer num aprofundamento infinito de um ramo e, por conseqüência, não sendo capaz de explorar outras áreas do espaço de estado.
+ 
+ - Busca em Profundidade Limitada
+ Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
+
+- **Busca Informada ou Busca Heurística**
+
+Os algoritmos desta categoria empregam estratégias que procuram prover maior eficiência funcional e de memória em relação as abordagens clássicas. Além da descrição do problema, fazem uso de funções de custo e de avaliação  para orientar a escolha do próximo estado a ser explorado durante o processo de busca.
+
+ - Hill-Climbing (Subida da Encosta ou Otimização Discreta)
+ 
+ - Best-First Search - BFS (Melhor primeiro)
+ 
+ - Branch-and-Bound

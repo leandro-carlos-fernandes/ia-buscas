@@ -12,10 +12,9 @@ public class Main {
 		char[] cfgIni = {'2','4','3','7','1','6','5',' ','8'};
 		//char[] cfgIni = {'2','3',' ','7','4','1','5','8','6'};
 		//char[] cfgIni = {'7','2','3','4',' ','1','5','8','6'}; // OutOfMemory
-		Estado puzzleInicial = new Puzzle8(cfgIni);
 
-		char[] cfgMeta = {'1','2','3','4','5','6','7','8',' '};
-		Estado puzzleFinal = new Puzzle8(cfgMeta);
+		Estado puzzleInicial = new Puzzle8(cfgIni);
+		Estado puzzleFinal = new Puzzle8(Puzzle8.TABULEIRO_ORGANIZADO);
 		
 		BuscaCega busca = new BuscaEmLargura();
 		busca.setInicio(puzzleInicial);
