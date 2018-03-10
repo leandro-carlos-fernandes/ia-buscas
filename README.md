@@ -15,7 +15,7 @@ Um quebra-cabeças combinatório e de deslizamento (do tipo _sliding tile puzzle_)
 
 Dentre as nove posições do arranjo há sempre uma que encontra-se vazia. É possível deslizar qualquer peça adjacente (tanto horizontalmente quanto verticalmente) para a posição livre, conferindo ao tabuleiro uma nova distribuição.
 
-As peças não podem ser retiradas do tabuleiro, tampouco podem ser movimentadas diagonalmente ou sobre uma outra peça. Vale ressaltar que nem sempre qualquer seqüência que o usuário possa imaginar seria possível efetivamente, uma vez que  na realidade o processo de embaralhamento é feito usando as mesmas regras. Um referencial teórico sobre como é possível determinar se uma configuração do tabuleiro é válidas ou não, pode ser encontradas [aqui] (http://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html) 
+As peças não podem ser retiradas do tabuleiro, tampouco podem ser movimentadas diagonalmente ou sobre uma outra peça. Vale ressaltar que nem sempre qualquer seqüência que o usuário possa imaginar seria possível efetivamente, uma vez que  na realidade o processo de embaralhamento é feito usando as mesmas regras. Um referencial teórico sobre como é possível determinar se uma configuração do tabuleiro é válidas ou não, pode ser encontradas [aqui](http://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html).
 
 - **Jogo da Velha (Tic-Tac-Toe)**
 
@@ -26,29 +26,39 @@ Jogada após jogada o tabuleiro vai sendo preenchido com os símbolos `X` e `O`. O
 
 ## Estratégias de Busca
 
-- **Busca Cega**
+- **Busca Cega**:
 
 Guiam-se por uma exploração sistemática do espaço de estados, segundo uma determinada estratégia e utilizam apenas a descrição do problema para conduzir o processo.
 
 Métodos deste grupo:
  
- - Busca em Largura
- Constroem a árvore de busca expandindo nível-a-nível, de modo que o aprofundamento aconteça após todas as possibilidades do nível anterior tenham sido analisadas.
+    - *Busca em Largura*:
+
+Constroem a árvore de busca expandindo nível-a-nível, de modo que o aprofundamento aconteça após todas as possibilidades do nível anterior tenham sido analisadas.
  
- - Busca em Profundidade
- Cria a árvore de busca se aprofundando na seqüência de estados sucessivos, incrementando o nível da árvore a cada passo e enquanto houver sucessores para o estado corrente. Os demais estados de um mesmo nível somente serão explorados após o ramo do anterior ter sido completamente finalizado.
+    - *Busca em Profundidade*:
+ 
+Cria a árvore de busca se aprofundando na seqüência de estados sucessivos, incrementando o nível da árvore a cada passo e enquanto houver sucessores para o estado corrente. Os demais estados de um mesmo nível somente serão explorados após o ramo do anterior ter sido completamente finalizado.
  
  Note que esta abordagem é suscetível a problemas frente processos cíclicos no espaço de estados e quando não há detecção de estados repetidos, podendo incorrer num aprofundamento infinito de um ramo e, por conseqüência, não sendo capaz de explorar outras áreas do espaço de estado.
  
- - Busca em Profundidade Limitada
- Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
+    - *Busca em Profundidade Limitada*:
+
+Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
+
 
 - **Busca Informada ou Busca Heurística**
 
 Os algoritmos desta categoria empregam estratégias que procuram prover maior eficiência funcional e de memória em relação as abordagens clássicas. Além da descrição do problema, fazem uso de funções de custo e de avaliação  para orientar a escolha do próximo estado a ser explorado durante o processo de busca.
 
- - Hill-Climbing (Subida da Encosta ou Otimização Discreta)
+    - *Hill-Climbing (Subida da Encosta ou Otimização Discreta)*:
  
- - Best-First Search - BFS (Melhor primeiro)
+    - *Best-First Search - BFS (Melhor primeiro)*:
  
- - Branch-and-Bound
+    - *Branch-and-Bound*:
+    
+    - [A\* (A-Star ou Busca Ótima)](https://en.wikipedia.org/wiki/A*_search_algorithm):
+    
+    - *Iterative Deepening A-Star - IDA\**:
+    
+    - *Recursive Best-First Search - RBFS\**:
