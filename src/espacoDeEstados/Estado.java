@@ -98,7 +98,7 @@ public abstract class Estado<T> {
 	 */
 	public void setCusto(int custo) {
 		this.custo = custo;
-	}
+	}	
 	
 	/**
 	 * Recupera o custo despendido para se alcançar este estado dentro do espaço.
@@ -108,6 +108,8 @@ public abstract class Estado<T> {
 		return custo;
 	}
 
+	public abstract int heuristica(T cfg);
+	
 	/**
 	 * Status, descrição ou configuração representativa para o estado.
 	 * @param informações que caracterizam este estado 
