@@ -26,7 +26,7 @@ Jogada após jogada o tabuleiro vai sendo preenchido com os símbolos `X` e `O`. O
 
 ## Estratégias de Busca
 
-- **Busca Cega**:
+### Busca Cega ###
 
 Guiam-se por uma exploração sistemática do espaço de estados, segundo uma determinada estratégia e utilizam apenas a descrição do problema para conduzir o processo.
 
@@ -47,7 +47,7 @@ Note que esta abordagem é suscetível a problemas frente processos cíclicos no es
 Opera de forma análoga ao anterior, porém limitando o nível máximo de aprofundamento de um ramo e evitando assim o comportamento exploratório infinito de um ramo que não contém uma solução válida para o problema.
 
 
-- **Busca Informada ou Busca Heurística**
+### Busca Informada ou Busca Heurística ###
 
 Os algoritmos desta categoria empregam estratégias que procuram prover maior eficiência funcional e de memória em relação as abordagens clássicas. Além da descrição do problema, fazem uso de funções de custo e de avaliação  para orientar a escolha do próximo estado a ser explorado durante o processo de busca.
 
