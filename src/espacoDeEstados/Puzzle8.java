@@ -307,9 +307,28 @@ public class Puzzle8 extends Estado<char[]> {
 		return estadosSucessores;
 	}
 	
-	private int heuristica(char[] tabuleiroOrganizado) {
-		// TODO Auto-generated method stub
-		return 0;
+	/**
+	 * Determina o valor de avaliação do estado em relação a uma configuração
+	 * objetivo (estado meta). A métrica implementada (heurística) consiste em
+	 * calcular a distância de cada peça na configuração atual em relação a sua
+	 * posição esperada no objetivo. 
+	 * @param cfgEstadoMeta a configuração do estado utilizado como meta. 
+	 * @return somatório das distâncias das peças em relação a posição objetivo. 
+	 */
+	public int heuristica(char[] cfgEstadoMeta) {
+		String strEstadoMeta = new String(cfgEstadoMeta);		
+		int heurist = 0;
+		
+		for (int i = 0; i < tabuleiro.length; i++) {
+			int posEsperada = strEstadoMeta.indexOf( tabuleiro[i] );
+			int linAtual = i / 3;
+			int colAtual = i % 3;
+			int linEsperada = posEsperada / 3;
+			int colEsperada = posEsperada % 3;
+			int dist = Math.abs(linEsperada - linAtual) + Math.abs(colEsperada - colAtual);
+			heurist += dist;
+		}		
+		return heurist;
 	}
 		
 	/**
