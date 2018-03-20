@@ -7,8 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//char[] cfgIni = {' ','2','3','1','4','6','7','5','8'};
-		char[] cfgIni = {'2','4','3','7','1','6','5',' ','8'};
-		//char[] cfgIni = {'2','3',' ','7','4','1','5','8','6'};
+		//char[] cfgIni = {'2','4','3','7','1','6','5',' ','8'};
+		char[] cfgIni = {'2','3',' ','7','4','1','5','8','6'};
 		//char[] cfgIni = {'7','2','3','4',' ','1','5','8','6'}; // OutOfMemory
 
 		Puzzle8 puzzleInicial = new Puzzle8();
@@ -21,7 +21,7 @@ public class Main {
 		puzzleFinal.setCusto(0);
 		puzzleFinal.setAvaliacao(0);
 						
-		BuscaInformada busca = new BranchAndBound();
+		BuscaInformada busca = new AStar();
 		busca.setInicio(puzzleInicial);
 		busca.setObjetivo(puzzleFinal);
 		busca.buscar();
