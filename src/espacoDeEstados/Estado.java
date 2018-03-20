@@ -24,6 +24,7 @@ public abstract class Estado<T> {
 	
 	protected int avaliacao = 0;		// valor de avaliação do estado em relação a um objetivo
 	protected int custo = 0;			// esforço despendido para alcançar o estado
+	protected int f = 0;				// valor representativo do esforço combinado a avaliação
 		
 	/**
 	 * Define o número identificador do estado.
@@ -106,6 +107,22 @@ public abstract class Estado<T> {
 	 */
 	public int getCusto() {
 		return custo;
+	}
+	
+	/**
+	 * Define o valor da função F para o estado corrente.
+	 * @param valor de F(e).
+	 */
+	public void setF(int f) {
+		this.f = f;
+	}	
+	
+	/**
+	 * Recupera o valor da função F para o estado.
+	 * @return valor da função F(e).
+	 */
+	public int getF() {
+		return f;
 	}
 
 	public abstract int heuristica(T cfg);
