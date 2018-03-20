@@ -1,7 +1,5 @@
-import espacoDeEstados.Estado;
-import espacoDeEstados.Puzzle8;
-import estrategiasDeBusca.cega.BuscaCega;
-import estrategiasDeBusca.cega.BuscaEmLargura;
+import espacoDeEstados.*;
+import estrategiasDeBusca.heuristica.*;
 
 public class Main {
 
@@ -13,10 +11,22 @@ public class Main {
 		//char[] cfgIni = {'2','3',' ','7','4','1','5','8','6'};
 		//char[] cfgIni = {'7','2','3','4',' ','1','5','8','6'}; // OutOfMemory
 
-		Estado puzzleInicial = new Puzzle8(cfgIni);
-		Estado puzzleFinal = new Puzzle8(Puzzle8.TABULEIRO_ORGANIZADO);
+		Puzzle8 puzzleInicial = new Puzzle8();
+		puzzleInicial.setEstado(cfgIni);
+		puzzleInicial.setCusto(0);
+		puzzleInicial.setAvaliacao( puzzleInicial.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
 		
-		BuscaCega busca = new BuscaEmLargura();
+//		System.out.println(puzzleInicial);
+//		for (Puzzle8 estado : puzzleInicial.getSucessores()) {
+//			System.out.println(estado);
+//		}
+		
+		Puzzle8 puzzleFinal = new Puzzle8();
+		puzzleFinal.setEstado( Puzzle8.TABULEIRO_ORGANIZADO );
+		puzzleFinal.setCusto(0);
+		puzzleFinal.setAvaliacao(0);
+						
+		BuscaInformada busca = new BestFirst();
 		busca.setInicio(puzzleInicial);
 		busca.setObjetivo(puzzleFinal);
 		busca.buscar();
