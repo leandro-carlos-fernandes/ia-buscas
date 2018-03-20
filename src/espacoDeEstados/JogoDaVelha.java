@@ -122,6 +122,10 @@ public class JogoDaVelha extends Estado<char[]> {
 		
 		return estadosSucessores;
 	}
+	
+	public int heuristica(char[] cfgEstadoMeta) {
+		return 0;
+	}
 
 	/**
 	 * Retorna uma String correspondente a posição das peças no tabuleiro do quebra-cabeças 
