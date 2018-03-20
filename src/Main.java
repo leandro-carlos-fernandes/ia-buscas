@@ -15,18 +15,13 @@ public class Main {
 		puzzleInicial.setEstado(cfgIni);
 		puzzleInicial.setCusto(0);
 		puzzleInicial.setAvaliacao( puzzleInicial.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
-		
-//		System.out.println(puzzleInicial);
-//		for (Puzzle8 estado : puzzleInicial.getSucessores()) {
-//			System.out.println(estado);
-//		}
-		
+			
 		Puzzle8 puzzleFinal = new Puzzle8();
 		puzzleFinal.setEstado( Puzzle8.TABULEIRO_ORGANIZADO );
 		puzzleFinal.setCusto(0);
 		puzzleFinal.setAvaliacao(0);
 						
-		BuscaInformada busca = new BestFirst();
+		BuscaInformada busca = new BranchAndBound();
 		busca.setInicio(puzzleInicial);
 		busca.setObjetivo(puzzleFinal);
 		busca.buscar();
