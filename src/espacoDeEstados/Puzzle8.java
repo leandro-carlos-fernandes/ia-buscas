@@ -123,6 +123,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[0] = cfgNova[3];
@@ -130,6 +131,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 1:
@@ -139,6 +141,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[2];
@@ -146,6 +149,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[1] = cfgNova[4];
@@ -153,6 +157,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 2:
@@ -162,6 +167,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[2] = cfgNova[5];
@@ -169,6 +175,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 3:
@@ -179,6 +186,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado.setCusto(this.getCusto() + 1);
 			estadosSucessores.add(estado);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[4];
 			cfgNova[4] = ' ';
@@ -186,12 +194,14 @@ public class Puzzle8 extends Estado<char[]> {
 			estado.setCusto(this.getCusto() + 1);
 			estadosSucessores.add(estado);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			cfgNova = getEstado();
 			cfgNova[3] = cfgNova[6];
 			cfgNova[6] = ' ';
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 4:
@@ -201,6 +211,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[5];
@@ -208,6 +219,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[7];
@@ -215,6 +227,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[4] = cfgNova[3];
@@ -222,6 +235,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 5:
@@ -231,6 +245,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[8];
@@ -238,6 +253,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[5] = cfgNova[4];
@@ -245,6 +261,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 6:
@@ -254,6 +271,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[6] = cfgNova[7];
@@ -261,6 +279,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 7:
@@ -270,6 +289,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[8];
@@ -277,6 +297,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[7] = cfgNova[6];
@@ -284,6 +305,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		case 8:
@@ -293,6 +315,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			cfgNova = getEstado();
 			cfgNova[8] = cfgNova[7];
@@ -300,6 +323,7 @@ public class Puzzle8 extends Estado<char[]> {
 			estado = new Puzzle8(cfgNova, this, getNivel()+1);
 			estado.setCusto(this.getCusto() + 1);
 			estado.setAvaliacao( estado.heuristica(Puzzle8.TABULEIRO_ORGANIZADO) );
+			estado.setF( estado.getCusto() + estado.getAvaliacao() );
 			estadosSucessores.add(estado);
 			break;
 		}

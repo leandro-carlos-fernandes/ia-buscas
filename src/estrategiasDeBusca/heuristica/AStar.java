@@ -1,15 +1,14 @@
 package estrategiasDeBusca.heuristica;
 
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.Stack;
 
 import espacoDeEstados.Estado;
 
 public class AStar extends BuscaInformada {
 
-	private Queue<Estado<?>> eAbertos;
+	private Stack<Estado<?>> eAbertos;
 
 	/**
 	 * Construtor padrão.
@@ -27,7 +26,7 @@ public class AStar extends BuscaInformada {
 	public AStar(Estado<?> estadoInicial, Estado<?> estadoMeta) {
 		super(estadoInicial,estadoMeta);
 		nomeDaEstrategia = "Busca Ótima - A* (A-Star)";
-		eAbertos = new LinkedList<Estado<?>>();
+		eAbertos = new Stack<Estado<?>>();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -35,11 +34,12 @@ public class AStar extends BuscaInformada {
 	public void buscar() {
 		Estado<?> eCorrente = eInicial;
 		while ((eCorrente != null) && (!eCorrente.equals(eObjetivo))) {
-			List<?> eSucessores = eCorrente.getSucessores();
-			Collections.sort((List<Estado<?>>) eSucessores, new OrdenarPorCustoMaisAvaliacao());
+			List<?> eSucessores = eCorrente.getSucessores();			
 			for (Estado<?> estado : (List<Estado<?>>) eSucessores)
-				eAbertos.add(estado);
-			eCorrente = eAbertos.poll();
+				eAbertos.push(estado);
+			Collections.sort((List<Estado<?>>) eAbertos, new OrdenarPorCustoMaisAvaliacao());
+			Collections.reverse((List<Estado<?>>) eAbertos);
+			eCorrente = eAbertos.pop();
 		}
 		// Se o laço foi encerrado por um estado válido ...
 		if (eCorrente != null) {

@@ -109,7 +109,8 @@ class OrdenarPorCustoMaisAvaliacao implements Comparator<Estado<?>> {
 
 	@Override
 	public int compare(Estado<?> estado1, Estado<?> estado2) {
-		return (estado1.getCusto() + estado1.getAvaliacao()) - (estado2.getCusto() + estado2.getAvaliacao());
+		int f = (estado1.getCusto() + estado1.getAvaliacao()) - (estado2.getCusto() + estado2.getAvaliacao());		
+		return (f != 0) ? f : estado2.getNivel() - estado1.getNivel();
 	}
 
 }
